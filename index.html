@@ -1,0 +1,27 @@
+// a
+const item= 
+[ { name: 'Bike', price:100 },
+  { name: 'Tv', price:200 },
+  { name: 'Album', price:100 },
+  { name: 'Book', price:5 },
+  { name: 'Phone', price:500 },
+  { name: 'Computer', price:1000 }];
+const minPrice = Math.min(...item.map(({ price }) => price));
+
+let result = item.filter(({ price }) => price === minPrice);
+console.log(result);
+
+// b
+const maxPrice = Math.max(...item.map(({ price }) => price));
+
+result = item.filter(({ price }) => price === maxPrice);
+console.log(result);
+
+// c
+let sumPrice=item.reduce((accum,item) => accum + item.price, 0)
+console.log(sumPrice)
+
+// d
+let itemNotLess10 = item.filter(({ price }) => price >= 10);
+let sumPriceNotLess10=itemNotLess10.reduce((accum,itemNotLess10) => accum + itemNotLess10.price, 0)
+console.log(sumPriceNotLess10)
